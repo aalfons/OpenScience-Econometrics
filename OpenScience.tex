@@ -1,0 +1,276 @@
+\documentclass[pdfpagelabels=false, usepdftitle=false]{beamer}
+
+\usepackage[framenumbers, sectiontitles]{ESE}
+% \usepackage{appendixnumberbeamer}
+
+\title{What does Open Science mean for Econometricians?}
+
+% \subtitle{}
+
+% - Use the \inst{?} command only if the authors have different affiliation.
+\author{
+  Andreas~Alfons
+}
+
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+\institute[EUR]{Erasmus School of Economics, Erasmus University Rotterdam}
+
+\date{EI Department Meeting, November~9, 2021}
+
+
+% new commands
+\newcommand{\argmin}{\mathop{\text{arg min}}}
+\newcommand{\cor}{\mathop{\text{cor}}}
+
+
+% \newcommand{\backupbegin}{
+%    \newcounter{framenumberappendix}
+%    \setcounter{framenumberappendix}{\value{framenumber}}
+% }
+% \newcommand{\backupend}{
+%    \addtocounter{framenumberappendix}{-\value{framenumber}}
+%    \addtocounter{framenumber}{\value{framenumberappendix}}
+% }
+
+
+% ---------------------
+% begin of presentation
+% ---------------------
+
+\begin{document}
+
+
+\ESEtitleframe
+
+% \begin{frame}{Content}
+% \tableofcontents
+% %\tableofcontents[pausesections]
+% \end{frame}
+
+
+\begin{frame}{Why Open Science in methodological research?}
+\begin{itemize}
+  \item We wouldn't expect someone to trust a theoretical result without a
+  mathematical proof
+  \vfill
+  \item Why would we expect someone to trust a table with empirical results
+  without the code?
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{FAIR principle}
+\alert{F}indable
+
+\bigskip
+\alert{A}ccessible
+
+\bigskip
+\alert{I}nteroperable
+
+\bigskip
+\alert{R}eusable
+
+\vfill
+
+\begin{itemize}
+  \arrowitem Introduced for scientific data management, but also applies to
+  other domains (e.g., code)
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[t]{Low-hanging fruit}
+\begin{itemize}
+  \arrowitem \alert{Make sure your research is not behind a paywall}
+\end{itemize}
+
+\vfill
+
+Open Access publishing:
+\medskip
+\begin{itemize}
+  \item VSNU agreement with many publishers
+  \begin{itemize}
+    \arrowitem Corresponding author has to be from a Dutch university
+  \end{itemize}
+  \smallskip
+  \item \sout{Erasmus Open Acces fund} (stopped in June 2021)
+  \smallskip
+  \item Open Access Journals, e.g.:
+  \begin{itemize}
+    \item Journal of Machine Learning Research
+    \item Journal of Statistical Software
+    \item Journal of Data Science, Statistics, and Visualization
+  \end{itemize}
+  \smallskip
+  \item Include budget for Open Access fees in grant applications
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[t]{Low-hanging fruit}
+\begin{itemize}
+  \arrowitem \alert{Make sure your research is not behind a paywall}
+\end{itemize}
+
+\vfill
+
+Make a preprint available, e.g.:
+\medskip
+\begin{itemize}
+  \item arXiv: \url{https://arxiv.org/}
+  \smallskip
+  \item SSRN: \url{https://www.ssrn.com/}
+  \smallskip
+  \item RePub: \url{https://repub.eur.nl/}
+  \smallskip
+  \item ERIM Research Report / TI Discussion Paper
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[t]{Low-hanging fruit}
+\begin{itemize}
+  \arrowitem \alert{Make the code for your method available}
+  (increases citations!)
+\end{itemize}
+
+\vfill
+
+Any code is better than no code:
+\medskip
+\begin{itemize}
+  \item It doesn't have to pretty
+  \smallskip
+  \item It doesn't have to be efficient
+  \smallskip
+  \item You don't have to provide support
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[t]{Low-hanging fruit}
+\begin{itemize}
+  \arrowitem \alert{Make the code for your method available}
+  (increases citations!)
+\end{itemize}
+
+\vfill
+
+Make your code easily findable:
+\medskip
+\begin{itemize}
+  \item Put it on a popular code sharing platform, e.g.:
+  \begin{itemize}
+    \item GitHub: \url{https://github.com/}
+    \item GitLab: \url{https://gitlab.com/}
+    \item Bitbucket: \url{https://bitbucket.org/}
+  \end{itemize}
+  \smallskip
+  \smallskip
+  \item Put it on the EUR Data Repository (figshare):
+  \url{https://datarepository.eur.nl/}
+  \begin{itemize}
+    \arrowitem You get a DOI, so your code is citable!
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[t]{A step further}
+\begin{itemize}
+  \arrowitem \alert{Make replication files for your analyses available}
+\end{itemize}
+
+\vfill
+
+Scripts that reproduce:
+\smallskip
+\begin{itemize}
+  \item Examples
+  \smallskip
+  \item Simulation studies or benchmark experiments
+  \smallskip
+  \item In particular all figures and tables of your paper
+\end{itemize}
+
+\vfill
+
+\begin{itemize}
+  \arrowitem This requires some effort, but:
+  \smallskip
+  \begin{itemize}
+    \item Several (top) journals require this already (e.g., JASA), and this
+    will only become more prevalent
+    \smallskip
+    \item Grant agencies reward Open Science practices
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[t]{A step further}
+\begin{itemize}
+  \arrowitem \alert{Make replication files for your analyses available}
+\end{itemize}
+
+\vfill
+
+Something to think about: future proofing
+\medskip
+\begin{itemize}
+  \item Package version managers, e.g., \pkg{packrat} in \proglang{R}
+  \smallskip
+  \item Docker container (virtual machine) containing the computational
+  environment and replication files
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[t]{A possible long-term project}
+\begin{itemize}
+  \arrowitem \alert{Use software that is freely available and open source}
+\end{itemize}
+
+\vfill
+
+\begin{itemize}
+  \item Using your method should not require an expensive license (e.g,
+  \proglang{MATLAB}
+  \bigskip
+  \item Proprietary software can be vague about important computational details
+  of implemented algorithms (e.g., Mplus)
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Open Science at EUR}
+EUR can help you with Open Science:
+
+\vfill
+
+\begin{itemize}
+  \item Open Science Coordinator at Erasmus Research Services:
+  Antonio Schettino
+  \bigskip
+  \item Data Steward: Lizette Guzman Ramirez
+  \bigskip
+  \item Open Science Community Rotterdam:
+  \url{https://www.openscience-rotterdam.com/}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Big-picture discussion point}
+\begin{itemize}
+  \arrowitem How can we avoid a replication crisis in methodological research?
+  \vfill
+  \arrowitem \alert{Should there be registered reports for simulation studies
+  and benchmark experiments?}
+\end{itemize}
+\end{frame}
+
+
+\end{document}
